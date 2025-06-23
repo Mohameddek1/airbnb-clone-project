@@ -154,6 +154,32 @@ To support the core features of the Airbnb Clone, the database includes several 
 
 ---
 
+## 🔐 API Security
+
+Security is a fundamental aspect of the Airbnb Clone project. Below are the key mechanisms that will be implemented to protect the system and user data:
+
+### 🔑 Authentication
+- Uses JWT or OAuth2 protocols for secure login and session handling.
+- Ensures that only verified users can access protected resources.
+
+### 🛂 Authorization
+- Role-based access control (RBAC) to distinguish between users, hosts, and admins.
+- Restricts sensitive actions (e.g., editing properties) to authorized users only.
+
+### 🚫 Rate Limiting
+- Prevents abuse and denial-of-service (DoS) attacks by limiting API call frequency per user/IP.
+
+### 🔒 Data Protection
+- Sensitive data (passwords, payment info) is encrypted both in transit (HTTPS) and at rest.
+- Validation and sanitization of all input data to prevent injection attacks (SQLi, XSS).
+
+### 🎯 Why Security Matters
+- **User Protection**: Secures personal and payment information from misuse.
+- **Platform Trust**: Builds user trust and complies with data protection regulations.
+- **System Integrity**: Prevents unauthorized access and data corruption.
+
+---
+
 ## ⚙️ Technology Stack
 
 | Tool                      | Purpose                               |
