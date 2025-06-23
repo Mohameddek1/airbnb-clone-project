@@ -1,98 +1,100 @@
-# airbnb-clone-project
-Airbnb Clone Project
-📌 Project Overview
-The Airbnb Clone Project is a full-stack web application inspired by Airbnb. It aims to replicate core functionalities like property listings, bookings, and user management using modern web technologies.
-Project Goal: Build a scalable, secure, and user-friendly platform to learn and apply real-world development practices.
+# 🏠 Airbnb Clone – Backend Overview
 
-👥 Team Roles
-Role	Responsibilities
-Backend Developer	Develop and maintain the RESTful APIs and business logic.
-Frontend Developer	Create responsive user interfaces using modern frameworks.
-Database Administrator (DBA)	Design, manage, and optimize the database schema and performance.
-DevOps Engineer	Implement CI/CD pipelines, manage deployments, and monitor infrastructure.
-QA Engineer	Write test cases, conduct testing, and ensure product quality.
-Project Manager	Plan tasks, coordinate team activities, and track progress.
+## 🚀 Objective
 
-🛠️ Technology Stack
-Technology	Purpose
-Django	Backend web framework for rapid API and admin panel development.
-PostgreSQL	Relational database for storing user, property, and booking data.
-GraphQL	Query language for APIs to improve frontend efficiency.
-React.js	Frontend library for building dynamic and responsive UI.
-Docker	Containerization tool to standardize the development environment.
-GitHub Actions	Automate tests and deployments with CI/CD workflows.
+Build a robust and scalable backend that powers an Airbnb-like platform, supporting users, hosts, listings, bookings, payments, and reviews with high efficiency and security.
 
-🧩 Database Design
-Key Entities:
-User
+---
 
-id, username, email, password, role
+## 🏆 Project Goals
 
-Property
+* **User Management** – Secure registration, login, and profile management.
+* **Property Management** – Creation, modification, and retrieval of listings.
+* **Booking System** – Reservation handling, including check-in/check-out logic.
+* **Payment Processing** – Integrated payment workflow for transactions.
+* **Review System** – Users can rate and review stays.
+* **Data Optimization** – Implement indexing and caching for performance.
 
-id, title, description, location, owner_id (FK)
+---
 
-Booking
+## 🛠️ Features Overview
 
-id, user_id (FK), property_id (FK), start_date, end_date
+### 1. API Standards & Tools
 
-Review
+* **OpenAPI** – Clear, auto-generated API documentation.
+* **Django REST Framework** – Powerful tools for building RESTful APIs.
+* **GraphQL** – Flexible, client-efficient data querying.
 
-id, user_id (FK), property_id (FK), rating, comment
+### 2. User Authentication
 
-Payment
+* **Endpoints**: `/users/`, `/users/{user_id}/`
+* **Functions**: Register, login, update profile, delete account
 
-id, booking_id (FK), amount, status, timestamp
+### 3. Property Management
 
-Relationships:
-A User can own multiple Properties.
+* **Endpoints**: `/properties/`, `/properties/{property_id}/`
+* **Functions**: CRUD operations on property listings
 
-A Property can have many Bookings and Reviews.
+### 4. Booking System
 
-A Booking is linked to one Property and one User.
+* **Endpoints**: `/bookings/`, `/bookings/{booking_id}/`
+* **Functions**: Book a property, update booking info, check-in/out
 
-A Payment is tied to a specific Booking.
+### 5. Payment Processing
 
-🚀 Feature Breakdown
-User Management
-Sign up, log in, manage profile, and role-based access (e.g., host vs guest).
+* **Endpoint**: `/payments/`
+* **Functions**: Handle payments linked to bookings
 
-Property Management
-Hosts can list, update, and delete properties with images and availability.
+### 6. Review System
 
-Booking System
-Guests can search, book, and cancel stays with calendar integration.
+* **Endpoints**: `/reviews/`, `/reviews/{review_id}/`
+* **Functions**: Add, view, update, and delete reviews
 
-Reviews and Ratings
-Users can leave feedback on properties they've booked.
+### 7. Database Optimization
 
-Payments
-Secure payment flow with transaction tracking and refund capability.
+* **Indexing** – Accelerates frequent queries.
+* **Caching (Redis)** – Enhances speed and reduces database load.
 
-🔐 API Security
-Authentication
-Ensures that only registered users can access certain features (e.g., JWT or OAuth).
+---
 
-Authorization
-Role-based access control to restrict certain actions (e.g., only hosts can list properties).
+## ⚙️ Technology Stack
 
-Rate Limiting
-Prevent abuse of public APIs, especially during booking operations.
+| Tool                      | Purpose                               |
+| ------------------------- | ------------------------------------- |
+| **Django**                | Web framework for backend development |
+| **Django REST Framework** | RESTful API development               |
+| **PostgreSQL**            | Relational database management        |
+| **GraphQL**               | Flexible API queries                  |
+| **Celery**                | Asynchronous task handling            |
+| **Redis**                 | Caching & session storage             |
+| **Docker**                | Environment containerization          |
+| **GitHub Actions**        | CI/CD for testing and deployment      |
 
-Data Protection
-Secure handling of personal and payment data using HTTPS and encryption.
+---
 
-⚙️ CI/CD Pipeline
-CI/CD ensures continuous integration and delivery of the project with high reliability.
+## 👥 Team Roles
 
-Why it matters:
-Automates testing and deployment to catch issues early and accelerate development.
+| Role                       | Responsibilities                        |
+| -------------------------- | --------------------------------------- |
+| **Backend Developer**      | Builds APIs, logic, and integrations    |
+| **Database Administrator** | Designs schema, indexing, performance   |
+| **DevOps Engineer**        | Manages deployment, scaling, monitoring |
+| **QA Engineer**            | Tests APIs and validates performance    |
 
-Tools Used:
+---
 
-GitHub Actions for automation
+## 📈 API Documentation Overview
 
-Docker for containerization
+### REST API (via OpenAPI)
 
-Heroku/AWS for deployment (can be adjusted as per project plan)
+Covers endpoints for:
 
+* **Users** – `GET`, `POST`, `PUT`, `DELETE`
+* **Properties** – `GET`, `POST`, `PUT`, `DELETE`
+* **Bookings** – `GET`, `POST`, `PUT`, `DELETE`
+* **Payments** – `POST`
+* **Reviews** – `GET`, `POST`, `PUT`, `DELETE`
+
+### GraphQL API
+
+* Enables flexible querying and mutation of user, property, and booking data.
