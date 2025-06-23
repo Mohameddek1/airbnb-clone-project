@@ -17,6 +17,34 @@ Build a robust and scalable backend that powers an Airbnb-like platform, support
 
 ---
 
+## ✨ Feature Breakdown
+
+### 1. User Management  
+Allows users to register, log in, and manage their profiles securely. This is the core foundation for identity and access control across the platform.
+
+### 2. Property Management  
+Hosts can list properties with detailed descriptions, prices, availability dates, and images. It enables visibility of listings to potential guests and facilitates property discovery.
+
+### 3. Booking System  
+Users can book available properties for specific dates and manage upcoming and past bookings. This system ensures proper scheduling and avoids double-bookings.
+
+### 4. Payment Processing  
+Secure handling of payments linked to bookings using integrated payment gateways. It ensures a smooth and verifiable transaction process for both guests and hosts.
+
+### 5. Review System  
+After completing a stay, users can leave reviews and ratings on properties. This fosters transparency and trust within the platform by allowing feedback.
+
+### 6. Admin Panel *(optional)*  
+Admins can oversee user activity, manage listings, and monitor system health. It supports platform governance and moderation.
+
+### 7. API Access & Documentation  
+REST and GraphQL APIs are provided with comprehensive documentation for ease of use. This improves developer experience and promotes integration with front-end or mobile apps.
+
+### 8. Performance Optimization  
+Caching, database indexing, and async task handling ensure scalability. These improvements support a responsive user experience even with high traffic.
+
+---
+
 ## 🛠️ Features Overview
 
 ### 1. API Standards & Tools
