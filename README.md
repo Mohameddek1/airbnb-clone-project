@@ -180,6 +180,22 @@ Security is a fundamental aspect of the Airbnb Clone project. Below are the key 
 
 ---
 
+## 🔄 CI/CD Pipeline
+
+Continuous Integration and Continuous Deployment (CI/CD) pipelines automate the process of testing, building, and deploying code changes to ensure faster delivery and improved reliability.
+
+### Why CI/CD Matters:
+- **Speed**: Automates testing and deployment so teams ship updates faster.
+- **Quality**: Ensures new code doesn’t break existing features through automated tests.
+- **Consistency**: Guarantees deployments happen the same way every time across environments.
+
+### Tools We Use:
+- **GitHub Actions**: Automates unit tests, builds, and deployment pipelines.
+- **Docker**: Ensures the app runs consistently across development, testing, and production environments.
+- **Heroku / AWS / Railway (optional)**: For streamlined deployment of containerized applications.
+
+---
+
 ## ⚙️ Technology Stack
 
 | Tool                      | Purpose                               |
