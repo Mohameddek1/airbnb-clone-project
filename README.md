@@ -57,6 +57,75 @@ Build a robust and scalable backend that powers an Airbnb-like platform, support
 
 ---
 
+## 🗃️ Database Design
+
+To support the core features of the Airbnb Clone, the database includes several key entities, their relationships, and performance-focused design decisions.
+
+### 📦 Key Entities & Fields
+
+#### **User**
+* `id`: Unique identifier  
+* `username`: Display name  
+* `email`: Unique email address  
+* `password`: Hashed password  
+* `role`: Guest or Host  
+* `created_at`: Registration date  
+
+#### **Property**
+* `id`: Unique identifier  
+* `title`: Name of the property  
+* `description`: Details about the property  
+* `location`: Address or coordinates  
+* `owner_id`: FK to User  
+* `price_per_night`: Cost  
+* `available_from`, `available_to`: Booking range  
+
+#### **Booking**
+* `id`: Unique identifier  
+* `user_id`: FK to User  
+* `property_id`: FK to Property  
+* `start_date`, `end_date`: Booking duration  
+* `status`: Pending, Confirmed, Cancelled  
+* `created_at`: Timestamp  
+
+#### **Payment**
+* `id`: Unique identifier  
+* `booking_id`: FK to Booking  
+* `amount`: Total charge  
+* `payment_method`: e.g., card, wallet  
+* `status`: Paid, Failed, Refunded  
+* `transaction_date`: Timestamp  
+
+#### **Review**
+* `id`: Unique identifier  
+* `user_id`: FK to User  
+* `property_id`: FK to Property  
+* `rating`: Integer (1–5)  
+* `comment`: Feedback text  
+* `created_at`: Timestamp  
+
+---
+
+### 🔗 Entity Relationships
+
+* A **User** can own multiple **Properties**
+* A **User** can book multiple **Properties** (as a guest)
+* A **Property** can have many **Bookings** and **Reviews**
+* Each **Booking** is tied to one **User** and one **Property**
+* Each **Payment** is linked to one **Booking**
+* A **Review** is posted by a **User** for a **Property**
+
+---
+
+### 🧠 Design Considerations
+
+* **Indexes** on `email`, `location`, and `property_id` to speed up search and queries.
+* **Foreign keys** are used to ensure relational integrity.
+* **Timestamps** are added to all models to track user activity and booking flow.
+* **Normalization** is applied where appropriate to reduce redundancy.
+
+---
+
 ## ⚙️ Technology Stack
 
 | Tool                      | Purpose                               |
